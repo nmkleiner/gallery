@@ -1,0 +1,649 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#baklawa {
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    width: 100%;
+    height: 95%;
+
+}
+/*board made up of two rows top and bottom, each includes 12 triangles and a middle div*/
+#board-container {
+    position: relative;
+    opacity: 0.9;
+    top: 300px;
+    width: 1700px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-right: auto; */
+    background-color: rgb(190, 132, 55);
+    text-align: center;
+    
+}
+
+#board-container h1 {
+    font-size: 3.5em;
+}
+
+.curr-turn {
+    position: relative;
+    display: inline-block;
+    font-size: 60px;
+}
+.curr-turn div {
+    display: inline-block;
+}
+
+.inline {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+
+}
+
+#board {
+    position: relative;
+    opacity: 1;
+    top: 50px;
+    left:100px;
+    width: 1300px;
+    height: 600px;
+    background-color: burlywood;
+    border: 20px solid black;
+}
+.end-game-alerts {
+    display: block;
+    position: relative;
+    bottom: 320px;
+}
+
+#winner-is {
+    position: relative;
+    right: 50px;
+    display: none;
+    font-size: 30pt;
+    z-index: 3;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+#mars {
+    position: relative;
+    left: 20px;
+    display: none;
+
+    font-size: 30pt;
+    z-index: 3;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.row {
+    width: 1300px;
+    height: 300px;
+    background-color: transparent;
+    position: relative;
+}
+.top-row {
+    top: -50px;
+}
+
+.bot-row {
+    top: 0px;
+}
+
+.triangle-down {
+    display: inline-block;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+    border-top: 240px solid black;
+    position: relative;
+    bottom: 10px;
+}
+
+.middle {
+    width: 50px;
+    height: 100%;
+    background-color: darkgoldenrod;
+    position: relative;
+    display: inline-block;
+}
+.middle-upper {
+    position: relative;
+    top:50px;
+    width: 50px;
+    height: 100%;
+    
+    background-color: darkgoldenrod;
+    position: relative;
+    display: inline-block;
+}
+.triangle-up {
+    width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+    border-bottom: 240px solid black;
+    position: relative;
+    display: inline-block;
+    bottom: 0px;
+}
+.blackTr{
+    border-bottom-color: black;
+    border-top-color: black;
+}
+.redTr {
+    border-bottom-color: red;
+    border-top-color: red;
+}
+.greenTr {
+    border-bottom-color: green;
+    border-top-color: green;
+}
+
+.green {
+    background-color: green;
+}
+
+.hidden-bot {
+    width: 7%;
+    height: 100%;
+    position: absolute;
+    left: -110px;
+}
+.hidden-top {
+    top: 50px;
+    width: 7%;
+    height: 100%;
+    position: absolute;
+    left: -110px;
+}
+/*this is where board ends*/
+
+.soldier {
+    position: absolute;
+    width: 40px;
+    height: 40px; 
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 50%;
+    z-index: 1;
+}
+.soldier-const {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 50%;
+    z-index: 1;
+}
+.black {
+    border-color: white;
+    background-color: black;
+}
+.white {
+    border-color: rgb(0, 0, 0);
+    background-color: white;
+}
+/*soldiers locations on board*/
+.column-0 {
+    left: -70px;
+}
+.column-1 {
+    left: 25px;
+}
+.column-2 {
+    left: 130px;
+}
+.column-3 {
+    left: 235px;
+}
+.column-4 {
+    left: 340px;
+}
+.column-5 {
+    left: 440px;
+}
+.column-6 {
+    left: 545px;
+}
+.column-7 {
+    left: 705px;
+}
+.column-8 {
+    left: 810px;
+}
+.column-9 {
+    left: 910px;
+}
+.column-10 {
+    left: 1015px;
+}
+.column-11 {
+    left: 1120px;
+}
+.column-12 {
+    left: 1225px;
+}
+.column-middle {
+    left: 625px;
+}
+
+.top-row-1 {
+    top:0px;
+}
+.top-row-2 {
+    top:50px;
+}
+.top-row-3 {
+    top:100px;
+}
+.top-row-4 {
+    top:150px;
+}
+.top-row-5 {
+    top:200px;
+}
+.top-row-6 {
+    margin-left: 20px;
+    top:0px;
+    z-index: 2;
+}
+.top-row-7 {
+    margin-left: 20px;
+    top:50px;
+    z-index: 2;
+}
+.top-row-8 {
+    margin-left: 20px;
+    top:100px;
+    z-index: 2;
+}
+.top-row-9 {
+    margin-left: 20px;
+    top:150px;
+    z-index: 2;
+}
+.top-row-10 {
+    margin-left: 20px;
+    top:200px;
+    z-index: 2;
+}
+.top-row-11 {
+    bottom: 200px;
+    margin-left: 40px;
+    z-index: 2;
+}
+.top-row-12 {
+    bottom: 200px;
+    margin-left: 40px;
+    z-index: 2;
+}
+.top-row-13 {
+    bottom: 200px;
+    margin-left: 40px;
+    z-index: 2;
+}
+.top-row-14 {
+    bottom: 200px;
+    margin-left: 40px;
+    z-index: 2;
+}
+.top-row-15 {
+    bottom: 200px;
+    margin-left: 40px;
+    z-index: 2;
+}
+
+.bot-row-1 {
+    bottom: 0px;
+}
+.bot-row-2 {
+    bottom: 50px;
+}
+.bot-row-3 {
+    bottom: 100px;
+}
+.bot-row-4 {
+    bottom: 150px;
+}
+.bot-row-5 {
+    bottom: 200px;
+}
+.bot-row-6 {
+    bottom: 0px;
+    margin-left: 20px;
+}
+.bot-row-7 {
+    bottom: 50px;
+    margin-left: 20px;
+}
+.bot-row-8 {
+    bottom: 100px;
+    margin-left: 20px;
+}
+.bot-row-9 {
+    bottom: 150px;
+    margin-left: 20px;
+}
+.bot-row-10 {
+    bottom: 200px;
+    margin-left: 20px;
+}
+.bot-row-11 {
+    bottom: 200px;
+    margin-left: 40px;
+}
+.bot-row-12 {
+    bottom: 200px;
+    margin-left: 40px;
+}
+.bot-row-13 {
+    bottom: 200px;
+    margin-left: 40px;
+}
+.bot-row-14 {
+    bottom: 200px;
+    margin-left: 40px;
+}
+.bot-row-15 {
+    bottom: 200px;
+    margin-left: 40px;
+}
+
+/* soldiers locations on exit */
+
+.top-exit-row-1 {
+    top:0px;
+}
+.top-exit-row-2 {
+    top:25px;
+}
+.top-exit-row-3 {
+    top:50px;
+}
+.top-exit-row-4 {
+    top:75px;
+}
+.top-exit-row-5 {
+    top:100px;
+}
+.top-exit-row-6 {
+    top:125px;
+}
+.top-exit-row-7 {
+    top:150px;
+}
+.top-exit-row-8 {
+    top:175px;
+}
+.top-exit-row-9 {
+    top:200px;
+    z-index: 2;
+}
+.top-exit-row-10 {
+    margin-left: 20px;
+    top:0px;
+    z-index: 2;
+}
+.top-exit-row-11 {
+    margin-left: 20px;
+    top:25px;
+    z-index: 2;
+}
+.top-exit-row-12 {
+    margin-left: 20px;
+    top:50px;
+    z-index: 2;
+}
+.top-exit-row-13 {
+    margin-left: 20px;
+    top:75px;
+    z-index: 2;
+}
+.top-exit-row-14 {
+    margin-left: 20px;
+    top:100px;
+    z-index: 2;
+}
+.top-exit-row-15 {
+    margin-left: 20px;
+    top:125px;
+    z-index: 2;
+}
+.bot-exit-row-1 {
+    bottom:0px;
+}
+.bot-exit-row-2 {
+    bottom:25px;
+}
+.bot-exit-row-3 {
+    bottom:50px;
+}
+.bot-exit-row-4 {
+    bottom:75px;
+}
+.bot-exit-row-5 {
+    bottom:100px;
+}
+.bot-exit-row-6 {
+    bottom:125px;
+}
+.bot-exit-row-7 {
+    bottom:150px;
+}
+.bot-exit-row-8 {
+    bottom:175px;
+}
+.bot-exit-row-9 {
+    bottom:200px;
+    z-index: 2;
+}
+.bot-exit-row-10 {
+    margin-left: 20px;
+    bottom:0px;
+    z-index: 2;
+}
+.bot-exit-row-11 {
+    margin-left: 20px;
+    bottom:25px;
+    z-index: 2;
+}
+.bot-exit-row-12 {
+    margin-left: 20px;
+    bottom:50px;
+    z-index: 2;
+}
+.bot-exit-row-13 {
+    margin-left: 20px;
+    bottom:75px;
+    z-index: 2;
+}
+.bot-exit-row-14 {
+    margin-left: 20px;
+    bottom:100px;
+    z-index: 2;
+}
+.bot-exit-row-15 {
+    margin-left: 20px;
+    bottom:125px;
+    z-index: 2;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 18%;
+    background-color: darkorange;
+    border-bottom: 10px solid darkblue;
+    color:black;
+    font-size: 1.5em;
+    text-align: center
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background-color: darkorange;
+    border-top: 10px solid darkblue;
+    color:black;
+    font-size: 1.5em;
+    text-align: center;
+    z-index: 2;
+   
+}
+
+/*everything cube related*/
+#cube-section {
+    background-color: #6e5500;
+    position: relative;
+    border: 1px solid black;
+    bottom: 590px;
+    height: 638px;
+    width: 200px;
+    left: 1440px;
+    text-align: center;
+}
+[draggable="true"] {
+    cursor: pointer;
+}
+#cube-text {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes flicker {
+    30% {
+         background-color: ghostwhite;
+    }
+    60% {
+         background-color: pink;
+    }
+    90% {
+         background-color: yellow;
+    }
+    
+}
+
+.cube {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    background: white;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    border-radius: 10px; 
+}
+
+.cube1 {
+    top: 200px;
+}
+.cube2 {
+    top: 320px;
+}
+@keyframes spin{
+        100% {
+        transform: rotate(360deg);
+        
+    }
+}
+.cube:hover {
+    animation-name: pulses;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+}
+.cube:hover {
+    animation-name: pulses;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulses{
+    25% {
+        transform: scale(1.2)
+    }
+    50% {
+        transform: scale(1.2)
+    }
+
+}
+
+.dot {
+    position: absolute;
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.dot1{ 
+    left: 15px;
+    top: 15px;
+}
+.dot2{
+    left: 70px;
+    top: 15px;
+}
+.dot3{
+    top: 45px;
+    left: 15px;
+}
+.dot4{
+    top: 45px;
+    left: 70px;
+}
+.dot5{
+    top: 75px;
+    left: 15px;
+}
+.dot6{
+    top: 75px;
+    left: 70px;
+}
+.dot7{
+    left:42.5px;
+    top:45px;
+    visibility: hidden;
+}
+
+
+
+.throw-cube {
+    width: 100%;
+    height: 170px;
+    font-size: 40px;
+    font-weight: bolder;
+    background-color: brown;
+    border:0;
+    border-right: 1px solid black;
+    transition: all 0.2s;
+}
+.throw-cube:hover {
+    cursor: pointer;
+    color: yellow;
+    font-size: 42px;
+    border: 2px solid yellow;
+}
+/*cube ends*/

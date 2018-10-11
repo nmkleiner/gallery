@@ -1,0 +1,206 @@
+body {
+    background:url(../img/bg1.jpg)no-repeat fixed;
+    background-size: cover;
+}
+
+.welcome {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    background-color: black;
+    border: 3px solid orange;
+    width: 40%;
+    border-radius: 80px 80px 0 0; 
+}
+
+.welcome h1 {
+    color: orange;
+    text-shadow: lightskyblue 2px 0 10px;
+    
+}
+.welcome h2 {
+    color: orange;
+    text-shadow: lightskyblue 2px 0 10px;
+}
+
+.menu {
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    
+}
+
+.form {
+    text-align: left;
+    color: orange;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.btn-set-diff {
+    position: relative;
+    bottom: 10px;
+    margin: 0 auto;
+    width: 65px;
+    height: 40px;
+    background-color: orange;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.btn-set-diff:hover {
+    border: 2px solid white;
+    font-weight: 800;
+}
+
+
+.counters {
+    margin: 0 auto;
+    width: 40%;
+    height: 40px;
+    background-color: black;
+    border-right: 3px solid orange;
+    border-left: 3px solid orange;
+    border-bottom: 3px solid orange;
+}
+
+.flag-count {
+    display: inline-block;
+    margin-top: 5px; 
+    width: 40px;
+    background-color: orange;
+    color: black;
+    font-size: 20pt;
+    text-align: center;
+    margin-left: 15%;
+    border: 1px solid gray;
+}
+
+.timer {
+    display: inline-block;
+    margin-top: 5px; 
+    width: 40px;
+    background-color: orange;
+    color: black;
+    font-size: 20pt;
+    text-align: center;
+    margin-left: 40%;
+    border: 1px solid gray;
+}
+
+table {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px; 
+
+}
+
+td {
+    border: 1px solid black;
+    /* padding: 15px; */
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.alert {
+    display: none;
+    position: relative;
+    margin: 0 auto;
+    bottom: 140px;
+    width: 140px;
+    background-color: yellow;
+    color: red;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    border: 1px solid black;
+    opacity: 0.7;
+}
+
+.cell {
+    background-color: gray;
+    transition: 0.3s;
+}
+
+.cell:hover {
+    background-color: antiquewhite;
+    opacity: 0.5;
+}
+
+.covered {
+    display: none;
+}
+
+.one {
+    color: black;
+}
+.two {
+    color: orangered;
+}
+.three {
+    color: purple;
+}
+.four {
+    color: blue;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.open-cell {
+    background-color: whitesmoke;
+}
+.open-mine {
+    background-color: red;
+}
+.open-empty {
+    display: none;
+}
+
+
+.modal-won {
+    display: none;
+    position: absolute;
+    text-align: center;
+    bottom: 350px;
+    left: 65%;
+    width: 300px;
+    height: 200px;
+    border: 5px solid black;
+    background-color: teal;
+    color: white;
+    border-radius: 10%; 
+    opacity: 0.7;
+    transition: 0.4s;
+}
+
+.modal-won:hover {
+    border: 5px solid white;
+}
+.modal-lost{
+    display: none;
+    position: absolute;
+    text-align: center;
+    bottom: 350px;
+    left: 65%;
+    width: 300px;
+    height: 200px;
+    border: 5px solid black;
+    background-color: red;
+    border-radius: 10%; 
+    color: black;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+.modal-lost:hover {
+    border: 5px solid white;
+}
+
+
+  
