@@ -1,0 +1,64 @@
+header {
+    position: fixed;
+    top: 0px;
+    background-color: black;
+    width: 100%;
+    z-index: 1;
+    
+}
+
+
+.empty-row {
+    height: 30px;
+    background-color: transparent;
+}
+
+.table-container {
+    width: 100%;
+}
+
+
+.book-details {
+    padding: 20px;
+    display: none;
+    position: fixed;
+    top: 250px;
+    left:20%;
+    width: 60%;
+    border: 2px solid black;
+    background-color: orangered;;
+    color: yellow;
+    font-size: 1.5em;
+    border-radius: 2%;
+    text-align: center;
+}
+                                            
+.book-details p {
+    text-align: left;
+}
+
+.book-details img {
+    margin: 10px 0 10px 0;
+}
+.black-square {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    color: white;
+}
+.white-rect {
+    display: inline-block;
+    height: 40px;
+    width: 120px;
+    background-color: #fff;
+    color: gray;
+}
+
+.side-modal {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    background-color: orangered;
+    padding: 20px;
+}

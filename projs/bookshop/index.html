@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel="stylesheet" href="lib/bs4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+"
+        crossorigin="anonymous">
+</head>
+
+<body onload="init()">
+    <header class="text-center">
+        <button class="btn btn-success btn-add" onclick="readAndAddNewBook()">Add Book</button>
+    </header>
+    
+    <div class="empty-row"></div>
+    <div class="new-book-section">
+        
+    </div>
+    <div class="container table-container">
+
+    </div>
+    <!-- side-modal update book -->
+    <div class="side-modal modal-update">
+        <h5 class="text-center">Update Book</h5>
+        <input type="text" class="update-price" placeholder="new price">
+        <div class="btn-container">
+        </div>
+    </div>
+    
+    <!-- side-modal new book -->
+    <div class="side-modal modal-new">
+        <h5 class="text-center">Add New Book</h5>
+        <input type="text" class="new-name" placeholder="book name">
+        <input type="text" class="new-price" placeholder="book price">
+        <div class="btn-container">
+        </div>
+    </div>
+
+    <!-- modal-details -->
+    <div class="book-details">
+        <button onclick="onClose()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2></h2>
+        <p class="text-center"></p>
+        <div class="img-container mx-auto"></div>
+        <div class="row mx-auto d-flex justify-content-center">
+        </div>
+    </div>
+    
+
+    <script src='js/util-service.js'></script>
+    <script src='js/books-service.js'></script>
+    <script src='js/main.js'></script>
+    <script src='lib/jquery-3.3.1.js'></script>
+    <script src='lib/bs4/js/bootstrap.js'></script>
+</body>
+
+</html>
