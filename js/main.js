@@ -13,7 +13,7 @@ function createProjs() {
         "name": "minesweeper",
         "title": "Try not to explode",
         "desc": "Yonatan the little ran in the morning to the garden",
-        "url": "#",
+        "url": "projs/minesweeper/index.html",
         "publishedAt": 1448693940000,
         "labels": ["Matrixes", "keyboard events"]
     },
@@ -22,7 +22,7 @@ function createProjs() {
         "name": "book shop",
         "title": "Manage your book store",
         "desc": "View/update/add/delete your books",
-        "url": "#",
+        "url": "projs/bookshop/index.html",
         "publishedAt": 1448693940000,
         "labels": ["Matrixes", "keyboard events"]
     },
@@ -31,7 +31,7 @@ function createProjs() {
         "name": "backgammon",
         "title": "Train your Shesh-Besh skills",
         "desc": "Play a game of Shesh-Besh against a friend",
-        "url": "#",
+        "url": "projs/backgammon/index.html",
         "publishedAt": 1448693940000,
         "labels": ["Matrixes", "CSS", "drag & drop events"]
     }

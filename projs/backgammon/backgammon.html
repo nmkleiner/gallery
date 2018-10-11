@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Backgammon For Champions</title>
+    <link rel="stylesheet" href="css/backgamon.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+</head>
+
+<body onload="init()">
+    <img id="baklawa" src="img/backgammon.jpg">
+
+    <div class="header">
+    </div>
+    <div id="board-container">
+        <div class="curr-turn">Current turn: <div></div></div>
+        
+        <div id="board">
+            <div class="row top-row">
+                <div class="hidden-top"></div>
+                <div class="triangle triangle-down blackTr" data-triangle="1"></div>
+                <div class="triangle triangle-down redTr" data-triangle="2"></div>
+                <div class="triangle triangle-down blackTr" data-triangle="3"></div>
+                <div class="triangle triangle-down redTr" data-triangle="4"></div>
+                <div class="triangle triangle-down blackTr" data-triangle="5"></div>
+                <div class="triangle triangle-down redTr" data-triangle="6"></div>
+                <div class="middle-upper"></div>
+                <div class="triangle triangle-down blackTr" data-triangle="7"></div>
+                <div class="triangle triangle-down redTr" data-triangle="8"></div>
+                <div class="triangle triangle-down blackTr" data-triangle="9"></div>
+                <div class="triangle triangle-down redTr" data-triangle="10"></div>
+                <div class="triangle triangle-down blackTr" data-triangle="11"></div>
+                <div class="triangle triangle-down redTr" data-triangle="12"></div>
+            </div>
+            <div class="row bot-row">
+                <div class="hidden-bot"></div>
+                <div class="triangle triangle-up redTr" data-triangle="24"></div>
+                <div class="triangle triangle-up blackTr" data-triangle="23"></div>
+                <div class="triangle triangle-up redTr" data-triangle="22"></div>
+                <div class="triangle triangle-up blackTr" data-triangle="21"></div>
+                <div class="triangle triangle-up redTr" data-triangle="20"></div>
+                <div class="triangle triangle-up blackTr" data-triangle="19"></div>
+                <div class="middle"></div>
+                <div class="triangle triangle-up redTr" data-triangle="18"></div>
+                <div class="triangle triangle-up blackTr" data-triangle="17"></div>
+                <div class="triangle triangle-up redTr" data-triangle="16"></div>
+                <div class="triangle triangle-up blackTr" data-triangle="15"></div>
+                <div class="triangle triangle-up redTr" data-triangle="14"></div>
+                <div class="triangle triangle-up blackTr" data-triangle="13"></div>
+            </div>
+            <div class="end-game-alerts">
+                <h1 id="winner-is"></h1>
+                <h1 id="mars"></h1>
+            </div>
+        </div>
+        <section id="cube-section">
+            <div class="throw-cube" onclick="throwCubes(this)">Click to Throw Cube</div>
+            <div class="cube cube1">
+                <div class='dot dot1'></div>
+                <div class='dot dot2'></div>
+                <div class='dot dot3'></div>
+                <div class='dot dot4'></div>
+                <div class='dot dot5'></div>
+                <div class='dot dot6'></div>
+                <div class='dot dot7'></div>
+            </div>
+            <br>
+            <div class="cube cube2">
+                <div class='dot dot1'></div>
+                <div class='dot dot2'></div>
+                <div class='dot dot3'></div>
+                <div class='dot dot4'></div>
+                <div class='dot dot5'></div>
+                <div class='dot dot6'></div>
+                <div class='dot dot7'></div>
+            </div>
+            <br>
+            <h2 id='cube-text'></h2>
+        </section>
+    </div>
+
+
+
+    <div class="footer">
+        <a href="index.html">back to homepage</a>
+    </div>
+    <script src="js/backgamon.js"></script>
+</body>
+
+</html>
