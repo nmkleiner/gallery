@@ -97,8 +97,8 @@ function renderProj(proj,i) {
                                         <div class="modal-body">
                                         <!-- Project Details Go Here -->
                                         <h2>${nameCapital}</h2>
-                                        <p class="item-intro text-muted">${proj.title}</p>
-                                        <img class="img-fluid d-block mx-auto" src="img/portfolio/${proj.name}-full.jpg" alt="">
+                                        <p class="item-intro">${proj.title}</p>
+                                        <img class="img-fluid d-block mx-auto img-thumbnail" src="img/portfolio/${proj.name}-full.jpg" alt="">
                                         <p>${proj.desc}</p>
                                         <a href="${proj.url}">Give my ${nameCapital} a try</a>
                                         <ul class="list-inline">
@@ -116,4 +116,20 @@ function renderProj(proj,i) {
                             </div>
                             </div>`
     return [strHtmlPortfolio,strHtmlModal]
+}
+
+
+
+function goGmail() {
+    var email = $('#email').val()
+    var subject = $('#subject').val()
+    var message = $('#message').val()
+    
+    $('#email').val('')
+    $('#subject').val('')
+    $('#message').val('')
+    
+    var url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${message}`
+    window.location.assign(url)
+
 }
