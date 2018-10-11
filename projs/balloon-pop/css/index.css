@@ -1,0 +1,37 @@
+body {
+    background-color: skyblue;
+}
+
+.balloon {
+    position: absolute;
+    width: 100px;
+    height: 130px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin-bottom: 30px;
+    bottom: 10px;
+    transition: opacity 1s, display;
+}
+
+
+.balloon:after {
+ display:inline-block; top:125px;
+  position:absolute;
+  left: 40px;
+  height:120px;
+  width:3px;
+  margin:0 auto;
+  content:"";
+  background:rgba(0,0,0,0.2); 
+}
+
+
+.sun {
+    background-color: rgb(255, 158, 2);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    right:100px;
+
+}

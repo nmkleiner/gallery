@@ -1,0 +1,65 @@
+body {
+    background: linear-gradient(135deg,black,white);
+    background-repeat: no-repeat;
+}
+
+header{
+    position: relative;
+    top: -10px;
+    background-color: aqua;
+    height: 40px;
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    border-bottom: goldenrod 10px solid;
+}
+
+.board {
+    background-color: rgb(8, 11, 133);
+    margin: 0 auto;
+    width: fit-content;
+    opacity: 0.7;
+    text-align: center;
+    color: white;
+}
+
+.board table{
+    margin: 0 auto;
+    top: 200px;
+    border: 1px solid white;
+    font-size: 40pt;
+    text-align: center;
+    transition: 0.3s;
+}
+
+
+.board td:hover {
+    background-color: #48f11e;
+    color: white;
+}
+
+.strikes-count {
+    font-size: 20px;
+    
+}
+
+.strikes-count span {
+    color: orange;
+    background-color: black;
+}
+
+.game-end {
+    position: relative;
+    margin: 0 auto;
+    width: fit-content;
+    height: auto;
+    font-size: 80px;
+}
+
+.won {
+    color: gold;
+}
+
+.lost{
+    color: red;
+}

@@ -34,6 +34,15 @@ function createProjs() {
         "url": "projs/backgammon/index.html",
         "publishedAt": 1448693940000,
         "labels": ["Matrixes", "CSS", "drag & drop events"]
+    },
+    {
+        "id": "balloons",
+        "name": "balloons",
+        "title": "Watch them float away",
+        "desc": "Balloons are flying up up and away, you can also pop them.",
+        "url": "projs/balloon-pop/index.html",
+        "publishedAt": 1448693940000,
+        "labels": ["movement", "CSS", "drag & drop events"]
     }
     ]
     return projs
