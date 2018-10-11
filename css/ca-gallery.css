@@ -183,6 +183,7 @@ header.masthead {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    border-bottom: black solid 10px;
 }
 header.masthead .intro-text {
     padding-top: 150px;
