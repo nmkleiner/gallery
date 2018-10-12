@@ -6,7 +6,6 @@ header {
     z-index: 1;
     padding-bottom: 5px; 
 }
-
 #books-table tr { 
     padding: 20px 0 20px 0
 }
@@ -21,6 +20,7 @@ td {
 
 .table-container {
     width: 100%;
+    background-color: rgb(246, 177, 65);
 }
 
 /* modal read book */
@@ -88,14 +88,15 @@ td {
     #books-table tr:hover button {
         visibility: visible;
     }
-    
-    tr td:last-child{
+        
+    tr .btn-container {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        
     }
     
     #books-table tr:hover {
-        border-bottom: 4px solid orange; 
+        border-bottom: 4px solid black; 
     }
     
     #books-table input {
@@ -111,7 +112,7 @@ td {
         width: 60%;
     }
     #books-table tr { 
-        /* border-bottom: 4px solid transparent; */
+        /* border-bottom: 4px solid black; */
         padding: 0ף
     }
     

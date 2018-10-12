@@ -43,9 +43,11 @@ function renderBooks(books) {
                         <td>$${book.price}</td>
                         <td>
                             <input type="radio" name="choose-book" data-id="${book.id}">
+                            <div class="btn-container">
                         <button class="btn btn-md btn-info" onclick="onRead('${book.id}')"><i class="fa fa-info-circle"></i> Read</button>
                         <button class="btn btn-md btn-warning" onclick="onUpdate('${book.id}')"><i class="fas fa-edit"></i> Edit Price</button>
                         <button class="btn btn-md btn-danger" onclick="onDelete('${book.id}')">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i> Del</button>
+                        </div>
                         </td>
                         </tr>`
     })
