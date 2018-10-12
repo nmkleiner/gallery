@@ -4,7 +4,7 @@ function createBooks() {
     var books = [
         createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
         createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
-        createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
+        createBook('The Catcher In The Rye Long Title Edition Inc.', '4.99', 'img/catcher.jpg'),
         createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
         createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
         createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
@@ -36,16 +36,17 @@ function createBook(name, price, imgUrl) {
 function renderBooks(books) {
     var strHtml = `<div class="row"><table id="books-table" class="mx-auto table table-striped"><thead class="thead-dark"><th>id</th><th>book name</th>
                     <th>price</th><th >actions</th></thead><tbody>`
-/*colspan="3"*/
     books.forEach(function (book) {
         strHtml += `<tr>    
                         <td>${book.id}</td>
                         <td>${book.name}</td>
                         <td>$${book.price}</td>
-                        <td><input type="radio" name="choose-book" data-id="${book.id}"><button class="btn btn-md btn-info" onclick="onRead('${book.id}')"><i class="fa fa-info-circle"></i> Read</button>
-                        <button class="btn btn-md btn-warning" onclick="onUpdate('${book.id}')"><i class="fa"></i> Update</button>
-                        <button class="btn btn-md btn-danger" onclick="onDelete('${book.id}')">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i> Del</button></td>
-                        
+                        <td>
+                            <input type="radio" name="choose-book" data-id="${book.id}">
+                        <button class="btn btn-md btn-info" onclick="onRead('${book.id}')"><i class="fa fa-info-circle"></i> Read</button>
+                        <button class="btn btn-md btn-warning" onclick="onUpdate('${book.id}')"><i class="fas fa-edit"></i> Edit Price</button>
+                        <button class="btn btn-md btn-danger" onclick="onDelete('${book.id}')">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i> Del</button>
+                        </td>
                         </tr>`
     })
     strHtml += `</tbody></table></div>`
@@ -96,7 +97,7 @@ function updateBook(bookId) {
         return book.id === bookId
     })
     gBooks[bookIdx].price = newPrice
-    
+
     renderBooks(gBooks)
     closeSideModal('.modal-update')
 }
@@ -145,7 +146,7 @@ function openSideModal(selector) {
 function closeSideModal(selector) {
     $(`${selector}`).slideToggle(300)
 }
-    
+
 
 function getRadioDataValue(radio) {
     return radio.dataset.id

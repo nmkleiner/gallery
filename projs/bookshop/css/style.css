@@ -4,9 +4,15 @@ header {
     background-color: black;
     width: 100%;
     z-index: 1;
-    
+    padding-bottom: 5px; 
 }
 
+#books-table tr { 
+    padding: 20px 0 20px 0
+}
+td {
+    font-size: 1.5em;
+}
 
 .empty-row {
     height: 30px;
@@ -17,14 +23,14 @@ header {
     width: 100%;
 }
 
-
+/* modal read book */
 .book-details {
     padding: 20px;
     display: none;
     position: fixed;
-    top: 250px;
-    left:20%;
-    width: 60%;
+    top: 200px;
+    left: 10%;
+    width: 80%;
     border: 2px solid black;
     background-color: orangered;;
     color: yellow;
@@ -32,7 +38,7 @@ header {
     border-radius: 2%;
     text-align: center;
 }
-                                            
+
 .book-details p {
     text-align: left;
 }
@@ -73,10 +79,6 @@ header {
 }
 
 
-/* outside of min-width no btns in rows, show btns in header, show checkboxes in rows */
-
-
-/* V show buttons in rows, don't show btns in header, no checkboxes in rows */
 @media (min-width: 992px) {
     #books-table tr button{
         display: inline;
@@ -91,18 +93,26 @@ header {
         display: flex;
         justify-content: space-around;
     }
-
+    
     #books-table tr:hover {
-        border-bottom: 4px solid gray; 
+        border-bottom: 4px solid orange; 
     }
-
+    
     #books-table input {
         display: none;
     }
-
+    
     .action-buttons {
         display: none;
     }
-
-
+    
+    .book-details {
+        left: 20%;
+        width: 60%;
+    }
+    #books-table tr { 
+        /* border-bottom: 4px solid transparent; */
+        padding: 0ף
+    }
+    
 }

@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="lib/bs4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+
+
 </head>
 
 <body onload="init()">
     <header class="text-center">
-        <button class="btn btn-success btn-add" onclick="readAndAddNewBook()">Add Book</button>
+        <button class="btn btn-success btn-add" onclick="readAndAddNewBook()"><i class="fa fa-plus"></i>Add Book</button>
         <div class="action-buttons">
             <button class="btn btn-md btn-info" onclick="onHeaderRead()"><i class="fa fa-info-circle"></i>
                 Read</button>
-            <button class="btn btn-md btn-warning" onclick="onHeaderUpdate()"><i class="fa"></i> Update
+            <button class="btn btn-md btn-warning" onclick="onHeaderUpdate()"><i class="fas fa-edit"></i> Edit Price
             </button>
             <button class="btn btn-md btn-danger" onclick="onHeaderDelete()">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i>
                 Del</button>
