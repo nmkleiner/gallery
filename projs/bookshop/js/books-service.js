@@ -34,23 +34,23 @@ function createBook(name, price, imgUrl) {
 }
 // create and render table
 function renderBooks(books) {
-    var strHtml = `<div class="row"><table class="mx-auto col-xs-12 col-sm-12 col-md-8 table table-striped"><thead class="thead-dark"><th>id</th><th>book name</th>
-                    <th>price</th><th colspan="3">actions</th></thead><tbody>`
-
+    var strHtml = `<div class="row"><table id="books-table" class="mx-auto table table-striped"><thead class="thead-dark"><th>id</th><th>book name</th>
+                    <th>price</th><th >actions</th></thead><tbody>`
+/*colspan="3"*/
     books.forEach(function (book) {
         strHtml += `<tr>    
                         <td>${book.id}</td>
                         <td>${book.name}</td>
                         <td>$${book.price}</td>
-                        <td><button class="btn btn-sm btn-info" onclick="onRead('${book.id}')"><i class="fa fa-info-circle"></i> Read</button></td>
-                        <td><button class="btn btn-sm btn-warning" onclick="onUpdate('${book.id}')"><i class="fa"></i> update</button></td>
-                        <td><button class="btn btn-sm btn-danger" onclick="onDelete('${book.id}')"><i class="fa fa-trash"></i> Delete</button></td>
+                        <td><input type="radio" name="choose-book" data-id="${book.id}"><button class="btn btn-md btn-info" onclick="onRead('${book.id}')"><i class="fa fa-info-circle"></i> Read</button>
+                        <button class="btn btn-md btn-warning" onclick="onUpdate('${book.id}')"><i class="fa"></i> Update</button>
+                        <button class="btn btn-md btn-danger" onclick="onDelete('${book.id}')">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i> Del</button></td>
                         
                         </tr>`
     })
     strHtml += `</tbody></table></div>`
 
-    var $container = $('.container')
+    var $container = $('.table-col')
     $container.html(strHtml)
 }
 
@@ -127,7 +127,7 @@ function bookRate(bookId, num) {
         return
     }
     gBooks[bookIdx].rate += num
-    $rate = $('.book-details .rate')
+    var $rate = $('.book-details .rate')
     $rate.html(`${gBooks[bookIdx].rate}`)
 }
 
@@ -146,3 +146,7 @@ function closeSideModal(selector) {
     $(`${selector}`).slideToggle(300)
 }
     
+
+function getRadioDataValue(radio) {
+    return radio.dataset.id
+}

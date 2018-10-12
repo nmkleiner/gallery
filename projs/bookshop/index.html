@@ -12,15 +12,26 @@
 <body onload="init()">
     <header class="text-center">
         <button class="btn btn-success btn-add" onclick="readAndAddNewBook()">Add Book</button>
+        <div class="action-buttons">
+            <button class="btn btn-md btn-info" onclick="onHeaderRead()"><i class="fa fa-info-circle"></i>
+                Read</button>
+            <button class="btn btn-md btn-warning" onclick="onHeaderUpdate()"><i class="fa"></i> Update
+            </button>
+            <button class="btn btn-md btn-danger" onclick="onHeaderDelete()">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i>
+                Del</button>
+        </div>
     </header>
-    
-    <div class="empty-row"></div>
-    <div class="new-book-section">
-        
-    </div>
-    <div class="container table-container">
 
+    <div class="empty-row"></div>
+
+    <div class="fluid-container table-container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 mx-auto table-col">
+
+            </div>
+        </div>
     </div>
+
     <!-- side-modal update book -->
     <div class="side-modal modal-update">
         <h5 class="text-center">Update Book</h5>
@@ -28,7 +39,7 @@
         <div class="btn-container">
         </div>
     </div>
-    
+
     <!-- side-modal new book -->
     <div class="side-modal modal-new">
         <h5 class="text-center">Add New Book</h5>
@@ -49,7 +60,9 @@
         <div class="row mx-auto d-flex justify-content-center">
         </div>
     </div>
-    
+
+
+
 
     <script src='js/util-service.js'></script>
     <script src='js/books-service.js'></script>

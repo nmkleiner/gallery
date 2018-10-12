@@ -36,6 +36,31 @@ function onUpdate(bookId) {
     //updateBook also renders and closes Modal 
 }
 
+function onHeaderUpdate() {
+    
+    var elRadio = getCheckedRadioByName('choose-book')
+    if (elRadio === -1) return;
+    var bookId = getRadioDataValue(elRadio)
+
+    onUpdate(bookId)
+}
+function onHeaderDelete() {
+    
+    var elRadio = getCheckedRadioByName('choose-book')
+    if (elRadio === -1) return;
+    var bookId = getRadioDataValue(elRadio)
+
+    onDelete(bookId)
+}
+function onHeaderRead() {
+    
+    var elRadio = getCheckedRadioByName('choose-book')
+    if (elRadio === -1) return;
+    var bookId = getRadioDataValue(elRadio)
+
+    onRead(bookId)
+}
+
 function onPlus(bookId) {
     bookRate(bookId,1)
 }
@@ -47,3 +72,7 @@ function onMinus(bookId) {
 function onClose() {
     closeModal()
 }
+
+
+
+

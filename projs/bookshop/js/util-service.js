@@ -18,3 +18,17 @@ function getFromStorage(key) {
 function saveToStorage(key, val) {
     localStorage.setItem(key, JSON.stringify(val))
 }
+
+
+
+function getCheckedRadioByName(name) {
+    var elCheckedRadio
+    var elRadios = document.getElementsByName(name);
+    for (var i = 0; i < elRadios.length ; i++) {
+        if (elRadios[i].checked) {
+            elCheckedRadio =  elRadios[i]
+            return elCheckedRadio;
+        }
+    }
+    return -1;
+}

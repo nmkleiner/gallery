@@ -62,3 +62,47 @@ header {
     background-color: orangered;
     padding: 20px;
 }
+
+
+#books-table tr button{
+    display: none;
+}
+
+.action-buttons {
+    display: inline-block;
+}
+
+
+/* outside of min-width no btns in rows, show btns in header, show checkboxes in rows */
+
+
+/* V show buttons in rows, don't show btns in header, no checkboxes in rows */
+@media (min-width: 992px) {
+    #books-table tr button{
+        display: inline;
+        visibility: hidden;
+    }
+    
+    #books-table tr:hover button {
+        visibility: visible;
+    }
+    
+    tr td:last-child{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #books-table tr:hover {
+        border-bottom: 4px solid gray; 
+    }
+
+    #books-table input {
+        display: none;
+    }
+
+    .action-buttons {
+        display: none;
+    }
+
+
+}

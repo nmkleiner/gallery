@@ -94,6 +94,9 @@ body {
     align-items: center;
     justify-content: space-around;
 }
+#contact {
+    width: 100%;
+}
 @media (min-width: 768px) {
     .offcanvas-aside {
         width: 40vw;
