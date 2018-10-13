@@ -6,13 +6,14 @@ p {
     line-height: 1.75;
 }
 a {
-    color: #fed136;
+    color: rgb(85, 202, 248);
+    font-size: 1.2em;
 }
 a.active,
 a:active,
 a:focus,
 a:hover {
-    color: #fec503;
+    color: rgb(85, 202, 248);
 }
 h1,
 h2,
@@ -69,7 +70,7 @@ body {
     left: 3%;
     height: 50px;
     width: 50px;
-    background: #e2cb36;
+    background: rgb(85, 202, 248);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -137,7 +138,7 @@ body {
     text-transform: uppercase;
     color: white;
     border: 0;
-    background-color: #fed136;
+    background-color: rgb(85, 202, 248);
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -149,7 +150,7 @@ body {
 #mainNav .navbar-brand:active,
 #mainNav .navbar-brand:focus,
 #mainNav .navbar-brand:hover {
-    color: #fec503;
+    color: rgb(85, 202, 248);
 }
 #mainNav .navbar-nav .nav-item .nav-link {
     font-size: 90%;
@@ -162,7 +163,7 @@ body {
 }
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fed136;
+    color: rgb(85, 202, 248);
 }
 @media (min-width: 992px) {
     #mainNav {
@@ -322,7 +323,7 @@ header.masthead .intro-text .intro-heading {
     margin: 0;
 }
 .portfolio-modal .modal-content {
-    background-color: rgb(252, 131, 87);
+    background-color: rgb(255, 209, 209);
     min-height: 100%;
     padding: 100px 0;
     text-align: center;
@@ -642,9 +643,9 @@ ul.social-buttons li a:hover {
 }
 .btn-primary {
     font-weight: 700;
-    color: white;
+    color: black;
     border-color: #fed136;
-    background-color: #fed136;
+    background-color: rgb(85, 202, 248);
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
 }
@@ -652,19 +653,19 @@ ul.social-buttons li a:hover {
 .btn-primary:focus {
     color: white;
     border-color: #b48b01;
-    background-color: #fec503;
+    background-color: rgb(85, 202, 248);
 }
 .btn-primary:hover {
     color: white;
     border-color: #f6bf01;
-    background-color: #fec503;
+    background-color: rgb(85, 202, 248);
 }
 .btn-primary.active,
 .btn-primary:active,
 .open > .btn-primary.dropdown-toggle {
     color: white;
     border-color: #f6bf01;
-    background-color: #fec503;
+    background-color: rgb(85, 202, 248);
 }
 .btn-primary.active.focus,
 .btn-primary.active:focus,
@@ -706,21 +707,21 @@ fieldset[disabled] .btn-primary:hover {
     padding: 20px 40px;
     border-radius: 3px;
     color: white;
-    border-color: #fed136;
-    background-color: #fed136;
+    border-color: rgb(85, 190, 220);
+    background-color: rgb(85, 202, 248);
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
 }
 .btn-xl.focus,
 .btn-xl:focus {
     color: white;
-    border-color: #b48b01;
-    background-color: #fec503;
+    border-color: rgb(85, 190, 220);
+    background-color: rgb(85, 202, 248);
 }
 .btn-xl:hover {
-    color: white;
-    border-color: #f6bf01;
-    background-color: #fec503;
+    color: black;
+    border-color: rgb(85, 190, 220);
+    background-color: rgb(85, 202, 248);
 }
 .btn-xl.active,
 .btn-xl:active,
@@ -762,4 +763,26 @@ fieldset[disabled] .btn-xl:hover {
 .btn-xl .badge {
     color: #fed136;
     background-color: white;
+}
+
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #F15; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #F15; 
 }

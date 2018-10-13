@@ -20,7 +20,6 @@ td {
 
 .table-container {
     width: 100%;
-    background-color: rgb(246, 177, 65);
 }
 
 /* modal read book */
@@ -79,6 +78,7 @@ td {
 }
 
 
+
 @media (min-width: 992px) {
     #books-table tr button{
         display: inline;
@@ -91,15 +91,15 @@ td {
         
     tr .btn-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         
     }
     
     #books-table tr:hover {
-        border-bottom: 4px solid black; 
+        border-bottom: 4px solid orangered; 
     }
     
-    #books-table input {
+    .radio-container {
         display: none;
     }
     

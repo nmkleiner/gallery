@@ -36,14 +36,20 @@ function createBook(name, price, imgUrl) {
 function renderBooks(books) {
     var strHtml = `<div class="row"><table id="books-table" class="mx-auto table table-striped"><thead class="thead-dark"><th>id</th><th>book name</th>
                     <th>price</th><th >actions</th></thead><tbody>`
+    var bookCount = 0
     books.forEach(function (book) {
+        bookCount++
         strHtml += `<tr>    
                         <td>${book.id}</td>
                         <td>${book.name}</td>
                         <td>$${book.price}</td>
                         <td>
-                            <input type="radio" name="choose-book" data-id="${book.id}">
-                            <div class="btn-container">
+                        <div class="radio-container">
+                            <input type="radio" id="radio${bookCount}" data-id="${book.id}" name="choose-book" />
+                            <label for="radio${bookCount}"><span><i class="fas fa-check"></i></span></label>
+                        </div>
+
+                        <div class="btn-container">
                         <button class="btn btn-md btn-info" onclick="onRead('${book.id}')"><i class="fa fa-info-circle"></i> Read</button>
                         <button class="btn btn-md btn-warning" onclick="onUpdate('${book.id}')"><i class="fas fa-edit"></i> Edit Price</button>
                         <button class="btn btn-md btn-danger" onclick="onDelete('${book.id}')">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i> Del</button>
@@ -52,10 +58,13 @@ function renderBooks(books) {
                         </tr>`
     })
     strHtml += `</tbody></table></div>`
-
+    
     var $container = $('.table-col')
     $container.html(strHtml)
 }
+
+/* <input type="radio" name="choose-book" data-id="${book.id}"> */
+
 
 function deleteBook(bookId) {
     var bookIdx = gBooks.findIndex(function (book) {

@@ -14,7 +14,7 @@ function createProjs() {
         "title": "Try not to explode",
         "desc": "Yonatan the little ran in the morning to the garden",
         "url": "projs/minesweeper/index.html",
-        "publishedAt": 1448693940000,
+        "publishedAt": formatTime(1536538265600),//sept.
         "labels": ["Matrixes", "keyboard events"]
     },
     {
@@ -23,7 +23,7 @@ function createProjs() {
         "title": "Manage your book store",
         "desc": "View/update/add/delete your books",
         "url": "projs/bookshop/index.html",
-        "publishedAt": 1448693940000,
+        "publishedAt": formatTime(1539538265600),//oct
         "labels": ["Matrixes", "keyboard events"]
     },
     {
@@ -32,7 +32,7 @@ function createProjs() {
         "title": "Train your Shesh-Besh skills",
         "desc": "Play a game of Shesh-Besh against a friend",
         "url": "projs/backgammon/index.html",
-        "publishedAt": 1448693940000,
+        "publishedAt": formatTime(1536538265600),//sept.
         "labels": ["Matrixes", "CSS", "drag & drop events"]
     },
     {
@@ -41,9 +41,19 @@ function createProjs() {
         "title": "Watch them float away",
         "desc": "Balloons are flying up up and away, you can also pop them.",
         "url": "projs/balloon-pop/index.html",
-        "publishedAt": 1448693940000,
+        "publishedAt": formatTime(1536538265600),//sept.
         "labels": ["movement", "CSS", "drag & drop events"]
+    },
+    {
+        "id": "balboard",
+        "name": "ballboard",
+        "title": "Catch all the balls",
+        "desc": "Run around and catch all the balls, avoid the sticky glue",
+        "url": "projs/ballboard/index.html",
+        "publishedAt": formatTime(1536538265600),//sept.
+        "labels": ["movement", "CSS"]
     }
+
     ]
     return projs
 }
@@ -69,8 +79,8 @@ function renderProj(proj,i) {
 
     var nameCapital = ''
     nameCapital += proj.name.charAt(0).toUpperCase()
-    for (var i = 1; i < proj.name.length; i++) {
-        nameCapital += proj.name.charAt(i)
+    for (var idx = 1; idx < proj.name.length; idx++) {
+        nameCapital += proj.name.charAt(idx)
     
     }
     
@@ -112,7 +122,6 @@ function renderProj(proj,i) {
                                         <a href="${proj.url}">Give my ${nameCapital} a try</a>
                                         <ul class="list-inline">
                                             <li>Date: ${proj.publishedAt}</li>
-                                            <li>Category: ${proj.labels.join(', ')}</li>
                                         </ul>
                                         <button class="btn btn-primary" data-dismiss="modal" type="button">
                                             <i class="fa fa-times"></i>
@@ -141,4 +150,9 @@ function goGmail() {
     var url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${message}`
     window.location.assign(url)
 
+}
+
+
+function formatTime(timeStamp) {
+    return moment(timeStamp).format('MM/YYYY')
 }
