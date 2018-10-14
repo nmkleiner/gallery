@@ -16,10 +16,14 @@ function clickHandler(ev, elCell) {
     }
 }
 
-function flagCell(elCell) {
 
-    // CR: the question is not good here. you don't defend against opened cells and the user can freely add them flags.
-    if (elCell.innerText === FLAG) {
+// rewrite a lot******************************************************
+function flagCell(elCell) {
+    var cell = getCellLocation(elCell)
+
+    if (cell.open) return;
+
+    if (cell.flag) {
         // cancel existing flag
         var elFlag = elCell.querySelector('.flag')
         elCell.removeChild(elFlag)
@@ -32,6 +36,7 @@ function flagCell(elCell) {
         return;
     }
 
+    cell.flag = true;
     elCell.innerHTML += '<span class="flag">' + FLAG + '</span>'
 
     gFlagCount--
@@ -48,21 +53,24 @@ function flagCell(elCell) {
 
 
 function isFlagCorrect(elCell) {
-    var elSpan = elCell.querySelector('span');
-
-    if (elSpan.innerText === MINE) return true;
+    var cell = getCellLocation(elCell)
+    if (cell.mine) return true;
     return false;
 }
 
 
-
+// rewrite alot ****************************
 function openCell(elCell) {
+    // get cell location to get his negs and call this func on them as well
+    var cell = getCellLocation(elCell)
+    console.log(cell)
+    
     // don't open flagged cells or open cells
-    if (elCell.querySelector('span').innerText === 'OPEN') return;
-    if (elCell.innerText === FLAG) {
-
+    if (cell.open) return;
+    if (cell.flag) {
+        
         $('.alert').html(`Don't click 🚩!`).slideToggle(300).delay(300).slideToggle(300)
-
+        
         return;
     }
     // start time count
@@ -72,7 +80,7 @@ function openCell(elCell) {
     gOpenCellsCount++
     startTimer()
     
-
+    cell.open = true;
     // changing cell color 
     elCell.classList.remove('cell')
     elCell.classList.add('open-cell')
@@ -84,8 +92,7 @@ function openCell(elCell) {
     }
 
     // giving mines different style, and ending game
-    if (elCell.innerText === MINE) {
-
+    if (cell.mine) {
         elCell.classList.remove('cell')
         elCell.classList.add('open-mine')
         gameOver()
@@ -94,17 +101,11 @@ function openCell(elCell) {
     if (elCell.innerText === EMPTY) {
         elCell.innerHTML = '<span class="open-empty">OPEN</span>'
 
-        // get cell location to get his negs and call this func on them as well
-        var splits = elCell.classList[0].split('-')
-        var cellI = parseInt(splits[1])
-        var cellJ = parseInt(splits[2])
-        // console.log('elCell:',elCell,'i:',cellI,'j:',cellJ)
-
         // loop on neighbours
-        for (var i = cellI - 1; i <= cellI + 1; i++) {
+        for (var i = cell.i - 1; i <= cell.i + 1; i++) {
             if (i < 0 || i >= gBoard.length) continue;
-            for (var j = cellJ - 1; j <= cellJ + 1; j++) {
-                if (i === cellI && j === cellJ) continue;
+            for (var j = cell.j - 1; j <= cell.j + 1; j++) {
+                if (i === cell.i && j === cell.j) continue;
                 if (j < 0 || j >= gBoard[i].length) continue;
 
                 var elNegCell = document.querySelector(`.cell-${i}-${j}`);

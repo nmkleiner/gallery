@@ -13,87 +13,39 @@ body {
     border-radius: 80px 80px 0 0; 
 }
 
-.welcome h1 {
-    color: orange;
-    text-shadow: lightskyblue 2px 0 10px;
-    
-}
-.welcome h2 {
-    color: orange;
-    text-shadow: lightskyblue 2px 0 10px;
-}
-
-.menu {
-    position: relative;
-    margin: 0 auto;
-    width: 50%;
-    
-}
-
-.form {
-    text-align: left;
-    color: orange;
-    width: 100px;
-    margin: 0 auto;
-}
-
-.btn-set-diff {
-    position: relative;
-    bottom: 10px;
-    margin: 0 auto;
-    width: 65px;
-    height: 40px;
-    background-color: orange;
-    color: black;
-    border: 2px solid transparent;
-    border-radius: 5px;
-}
-
-.btn-set-diff:hover {
-    border: 2px solid white;
-    font-weight: 800;
-}
-
-
-.counters {
-    margin: 0 auto;
-    width: 40%;
-    height: 40px;
-    background-color: black;
-    border-right: 3px solid orange;
-    border-left: 3px solid orange;
-    border-bottom: 3px solid orange;
-}
-
-.flag-count {
-    display: inline-block;
-    margin-top: 5px; 
-    width: 40px;
-    background-color: orange;
-    color: black;
-    font-size: 20pt;
+.board-container {
+    width: fit-content;
     text-align: center;
-    margin-left: 15%;
-    border: 1px solid gray;
+    margin: 0 auto;
+}
+.diff-container {
+    margin-bottom: 100px;
+    text-align: center;
+}
+.difficulty {
+    font-size: 1.5em;
 }
 
-.timer {
+.table-header {
+    display: flex;
+}
+
+.flag-count , .timer, .emoj{
+    box-sizing: border-box;
     display: inline-block;
-    margin-top: 5px; 
-    width: 40px;
     background-color: orange;
     color: black;
-    font-size: 20pt;
+    font-size: 30px;
     text-align: center;
-    margin-left: 40%;
-    border: 1px solid gray;
+    border: 3px solid black;
+    height: 40px;
+    width: 33%;
 }
+
 
 table {
     position: relative;
     margin: 0 auto;
-    margin-top: 20px; 
-
 }
 
 td {

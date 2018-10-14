@@ -22,9 +22,15 @@ function countNeighbours(mat, cellI, cellJ) {
           if (i === cellI && j === cellJ) continue;
           if (j < 0 || j >= mat[i].length) continue;
 
-          if (mat[i][j] === MINE) negsCount++;
+          if (mat[i][j].mine) negsCount++;
       }
   }
   return negsCount;
 }
 
+function getCellLocation(elCell) {
+  var splits = elCell.classList[0].split('-')
+    var cellI = parseInt(splits[1])
+    var cellJ = parseInt(splits[2])
+    return gBoard[cellI][cellJ]
+}

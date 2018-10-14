@@ -30,20 +30,20 @@ function init() {
 
     // gSafeCellsCount gets value inside 
     gIsGameOn = true;
-    clearInterval(gShowTime)
-    restartTime()
 
     gOpenCellsCount = 0;
     var diff = getDiff()
 
     gBoard = createMat(diff)
-    
+
     var cellsCount = gSize ** 2;
     var minesCount = gFlagCount
     gNoMinesCellsCount = cellsCount - minesCount
 
     console.table(gBoard)
     renderBoard(gBoard, '.board-container')
+    restartTime()
+    clearInterval(gShowTime)
     updateFlagsCountDisplay()
 }
 
@@ -78,7 +78,14 @@ function createMat(diff) {
     for (var i = 0; i < size; i++) {
         mat.push([])
         for (var j = 0; j < size; j++) {
-            mat[i][j] = EMPTY
+            mat[i][j] = {
+                open: false,
+                mine: false,
+                flag: false,
+                detector: 0,
+                i,
+                j
+            }
         }
     }
     // fill mat with mines and numbers
@@ -105,8 +112,8 @@ function createMines(diff) {
 
     //CR: We don't need three variables here.****need to think about it
     gCorrectFlagsCount = gFlagCount = minesCount;
-    
-    return minesCount    
+
+    return minesCount
 }
 
 // gets mat and mines, randomly locates the mines inside the mat and returns mat
@@ -116,11 +123,11 @@ function plantMines(mat, minesCount) {
     for (var idx = 0; idx < minesCount; idx++) {
         i = getRandomInt(0, mat.length);
         j = getRandomInt(0, mat.length);
-        if (mat[i][j] === MINE) {
+        if (mat[i][j].mine === true) {
             idx--
             continue;
         }
-        mat[i][j] = MINE;
+        mat[i][j].mine = true;
     }
     return mat;
 }
@@ -132,58 +139,71 @@ function calcDetectors(mat) {
     for (var i = 0; i < mat.length; i++) {
         for (var j = 0; j < mat.length; j++) {
 
-            if (mat[i][j] === MINE) continue;
+            if (mat[i][j].mine) continue;
 
             detector = countNeighbours(mat, i, j)
-            if (detector !== 0) mat[i][j] = detector;
+            if (detector !== 0) mat[i][j].detector = detector;
         }
     }
     return mat;
 }
 
 
+// rewrite alot ****************************
 
 function renderBoard(mat, selector) {
-
     var elContainer = document.querySelector(selector);
-    var strHTML = '<table border="0" ><tbody>';
+    var strHTML = `<div class="table-header"> 
+                    <div class="flag-count">0</div>
+                    <div class="emoj">:)</div>
+                    <div class="timer">0</div>
+                </div>
+                <table border="0" class="board">
+                    <tbody>`;
 
     for (var i = 0; i < mat.length; i++) {
         strHTML += '<tr>';
         for (var j = 0; j < mat[0].length; j++) {
             var cell = mat[i][j];
 
-
-            var className = 'cell cell-' + i + '-' + j;
-
-            switch (mat[i][j]) {
-                case MINE:
-                    className = 'mine cell cell-' + i + '-' + j;
-                    break;
-                case 1:
-                    className = 'one cell cell-' + i + '-' + j;
-                    break;
-                case 2:
-                    className = 'two cell cell-' + i + '-' + j;
-                    break;
-                case 3:
-                    className = 'three cell cell-' + i + '-' + j;
-                    break;
-                case 4:
-                    className = 'four cell cell-' + i + '-' + j;
-                    break;
-                case 5:
-                    className = 'five cell cell-' + i + '-' + j;
-                    break;
-                case 6:
-                    className = 'six cell cell-' + i + '-' + j;
-                    break;
-                case 7:
-                    className = 'seven cell cell-' + i + '-' + j;
-                    break;
-                case 8:
-                    className = 'eight cell cell-' + i + '-' + j;
-                    break;
+            var className = 'cell-' + i + '-' + j + ' cell' 
+            
+            if (mat[i][j].mine) {
+                className = 'cell-' + i + '-' + j + ' mine cell' 
+                cell = MINE;
+            } 
+            
+            else if (mat[i][j].detector) {
+                switch (mat[i][j].detector) {
+                    case 1:
+                        className = 'cell-' + i + '-' + j + ' one cell' 
+                        break;
+                    case 2:
+                        className = 'cell-' + i + '-' + j + ' two cell' 
+                        break;
+                    case 3:
+                        className = 'cell-' + i + '-' + j + ' three cell' 
+                        break;
+                    case 4:
+                        className = 'cell-' + i + '-' + j + ' four cell' 
+                        break;
+                    case 5:
+                        className = 'cell-' + i + '-' + j + ' five cell' 
+                        break;
+                    case 6:
+                        className = 'cell-' + i + '-' + j + ' six cell' 
+                        break;
+                    case 7:
+                        className = 'cell-' + i + '-' + j + ' seven cell' 
+                        break;
+                    case 8:
+                        className = 'cell-' + i + '-' + j + ' eight cell' 
+                        break;
+                }
+                cell = cell.detector
+            }
+            else {
+                cell = ''
             }
 
             strHTML += '<td class="' + className +
@@ -193,7 +213,6 @@ function renderBoard(mat, selector) {
         strHTML += '</tr>'
     }
     strHTML += '</tbody></table>';
-    // console.log('strHTML', strHTML);
     elContainer.innerHTML = strHTML;
 }
 
