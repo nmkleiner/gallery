@@ -1,11 +1,5 @@
 issues
 
-translations
-
-
-other stuff
-- save to localstorage and get from localstorage
-
 Done
 
 V books action buttons
@@ -15,3 +9,4 @@ V books prices
 V side modals, translate while rendering
 V placeholders
 V lift modal up
+V save to localstorage and get from localstorage

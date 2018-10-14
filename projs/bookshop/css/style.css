@@ -22,7 +22,7 @@ header {
     padding: 20px 0 20px 0
 }
 td {
-    font-size: 1.5em;
+    font-size: 3em;
 }
 
 .empty-row {
@@ -86,8 +86,6 @@ td {
 }
 
 
-
-
 @media (min-width: 992px) {
     #books-table tr button{
         display: inline;
@@ -121,7 +119,7 @@ td {
         width: 60%;
     }
     #books-table tr { 
-        padding: 0ף
+        padding: 0;
     }
     
     header {
@@ -131,5 +129,8 @@ td {
         width: 100%;
         z-index: 1;
         padding-bottom: 5px; 
+    }
+    td {
+        font-size: 1em;
     }
 }

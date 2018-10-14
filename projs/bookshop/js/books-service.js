@@ -1,24 +1,20 @@
 'use strict'
 
 function createBooks() {
-    var books = [
-        createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
-        createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
-        createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
-        createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
-        createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
-        createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
-        createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
-        createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
-        createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
-        createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
-        createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
-        createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
-        createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
-        createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
-        createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
-        createBook('The Four Agreements', '9.99', 'img/fouragreements.jpg')
-    ]
+
+    // localstorage empty so fill it up
+    if (!localStorage.length) {
+        var books = [
+            createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
+            createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
+            createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
+            createBook('The Four Agreements', '9.99', 'img/fouragreements.jpg')
+        ]
+            saveToStorage('Books', books)
+    }
+    else {
+        var books = getFromStorage('Books')
+    }
     return books;
 }
 
@@ -57,7 +53,7 @@ function renderBooks(books) {
                         </tr>`
     })
     strHtml += `</tbody></table></div>`
-    
+
     var $container = $('.table-col tbody')
     $container.html(strHtml)
 }
@@ -87,11 +83,11 @@ function readBook(bookId) {
     // open modal and create fresh image text & buttons
     $modal.fadeToggle(300)
     $modal.find('h2').html(`${book.name}`)
-   
+
     $modal.find('p').html(`${formatNum(book.price)}`)
-   
+
     $modal.find('.img-container').html(`<img class="img-responsive img-thumbnail" src="${book.imgURL}">`)
-   
+
     $modal.find('.row').html(`<div class=" btn black-square col-xs-1" onclick="onMinus('${book.id}')">-</div>
     <div class="white-rect col-xs-2 rate">${book.rate}</div>
     <div class="btn black-square col-xs-1" onclick="onPlus('${book.id}')">+</div>`)
@@ -129,6 +125,7 @@ function createNewBook() {
 
     var newBook = createBook(bookName, bookPrice)
     gBooks.push(newBook)
+    saveToStorage('Books',gBooks)
     renderBooks(gBooks)
     closeSideModal('.modal-new')
 }
