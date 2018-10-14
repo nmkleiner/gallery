@@ -33,13 +33,18 @@
         <h2>Choose difficulty level</h2>
         <div class="menu">
             <form class="form" action="setDiff">
-                <input class="radio-row" type="radio" name="difficulty" value="Easy" checked> Easy<br>
+                <select class="difficulty" onchange="init()">
+                    <option value="Easy">easy</option>
+                    <option value="Medium">medium</option>
+                    <option value="Hard">hard</option>
+                </select>
+                <!-- <input class="radio-row" type="radio" name="difficulty" value="Easy" checked> Easy<br>
                 <input class="radio-row" type="radio" name="difficulty" value="Medium"> Medium<br>
                 <input class="radio-row" type="radio" name="difficulty" value="Hard"> Hard<br>
-                <input class="radio-row" type="radio" name="difficulty" value="Extreme"> Extreme <br>
+                <input class="radio-row" type="radio" name="difficulty" value="Extreme"> Extreme <br> -->
             </form>
-            <br>
-            <div class="btn-set-diff" onclick="init()">Set difficulty</div>
+            <!-- <br> -->
+            <!-- <div class="btn-set-diff" onclick="init()">Set difficulty</div> -->
         </div>
     </div>
     <div class="counters">

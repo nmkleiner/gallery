@@ -34,7 +34,6 @@ function init() {
     restartTime()
 
     gOpenCellsCount = 0;
-    //CR: Why to use a global? // corrected
     var diff = getDiff()
 
     gBoard = createMat(diff)
@@ -50,13 +49,8 @@ function init() {
 
 // get diff from user via form buttons
 function getDiff() {
-    var elRadios = document.querySelectorAll('.radio-row')
-    for (var i = 0; i < elRadios.length; i++) {
-        if (elRadios[i].checked) {
-            var diff = elRadios[i].value
-            break;
-        }
-    }
+    var elDropdown = document.querySelector('.difficulty')
+    var diff = elDropdown.value
     return diff
 }
 
@@ -76,14 +70,10 @@ function createMat(diff) {
         case 'Hard':
             size = 8;
             break;
-        case 'Extreme':
-            size = 12;
-            break;
     }
     gSize = size;
     // build empty mat
 
-    // CR: You Did not use the cell object as written at the PDF. // that would be hard to change
     var mat = []
     for (var i = 0; i < size; i++) {
         mat.push([])
@@ -111,17 +101,12 @@ function createMines(diff) {
         case 'Hard':
             minesCount = 15;
             break;
-        case 'Extreme':
-            minesCount = 30;
-            break;
     }
 
     //CR: We don't need three variables here.****need to think about it
     gCorrectFlagsCount = gFlagCount = minesCount;
     
-    return minesCount
-    // CR: Why Array? :// corrected
-    
+    return minesCount    
 }
 
 // gets mat and mines, randomly locates the mines inside the mat and returns mat
@@ -246,8 +231,6 @@ function startTimer() {
 }
 
 function restartTime() {
-    // CR: Where is the model? you restarted only the DOM.
-    // 
     var elTimer = document.querySelector('.timer')
     elTimer.innerText = 0
 }

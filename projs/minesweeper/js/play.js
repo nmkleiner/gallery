@@ -69,8 +69,6 @@ function openCell(elCell) {
     // this global var gOpenCellsCount is not useful in other 
     // conditions because it gets too big somehow
     // but it's good for starting the timer
-
-    // CR: You do not need this variable.
     gOpenCellsCount++
     startTimer()
     
@@ -113,7 +111,6 @@ function openCell(elCell) {
                 var elNegCellSpan = document.querySelector(`.cell-${i}-${j} span`);
                 // call openCell on neg empty cells
 
-                //CR: Double copied code://corrected
                 if (elNegCellSpan && isEmptyCell(elNegCellSpan) || isNumCell(elNegCellSpan)) {
                     openCell(elNegCell);
                 }
@@ -128,8 +125,6 @@ function openCell(elCell) {
 
 function isEmptyCell(elCellSpan) {
     return elCellSpan.innerText === EMPTY;
-    // CR: same like writing://corrected
-    // return elCellSpan.innerText === EMPTY
 }
 
 function isNumCell(elCellSpan) {
@@ -144,8 +139,6 @@ function isNumCell(elCellSpan) {
 
 function isVictory() {
     // count open cells
-
-    // CR: You'd use your model for such checks instead of running over your whole DOM.
     var openCellsCount = 0;
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard.length; j++) {
@@ -213,7 +206,6 @@ function gameOver() {
         }
         
     }
-    
 
     // reveal all hidden spans
     var elHiddens = document.querySelectorAll('.hidden')
@@ -228,7 +220,5 @@ function gameOver() {
         elCells[i].classList.add('open-cell')
 
     }
-    // show modal
-
     $('.modal-lost').show()
 }
