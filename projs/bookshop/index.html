@@ -16,15 +16,20 @@
 
 <body onload="init()">
     <header class="text-center">
-        <button class="btn btn-success btn-add" onclick="readAndAddNewBook()"><i class="fa fa-plus"></i>Add Book</button>
+        <button class="btn btn-success btn-lg btn-add" onclick="readAndAddNewBook()" data-trans="add-btn"><i class="fa fa-plus"></i>Add
+            Book</button>
         <div class="action-buttons">
-            <button class="btn btn-md btn-info" onclick="onHeaderRead()"><i class="fa fa-info-circle"></i>
+            <button class="btn btn-lg btn-info" onclick="onHeaderRead()" data-trans="read-btn"><i class="fa fa-info-circle"></i>
                 Read</button>
-            <button class="btn btn-md btn-warning" onclick="onHeaderUpdate()"><i class="fas fa-edit"></i> Edit Price
+            <button class="btn btn-lg btn-warning" onclick="onHeaderUpdate()" data-trans="edit-btn"><i class="fas fa-edit"></i>
+                Edit Price
             </button>
-            <button class="btn btn-md btn-danger" onclick="onHeaderDelete()">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i>
-                Del</button>
+            <button class="btn btn-lg btn-danger" onclick="onHeaderDelete()" data-trans="delete-btn">Del</button>
         </div>
+        <select class="change-lang" onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+        </select>
     </header>
 
     <div class="empty-row"></div>
@@ -32,48 +37,58 @@
     <div class="fluid-container table-container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 mx-auto table-col">
-
+                <div class="row">
+                    <table id="books-table" class="mx-auto table table-striped">
+                        <thead class="thead-dark">
+                            <th data-trans="id">id</th>
+                            <th data-trans="name">book name</th>
+                            <th data-trans="price">price</th>
+                            <th data-trans="actions">actions</th>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- side-modal update book -->
-    <div class="side-modal modal-update">
-        <h5 class="text-center">Update Book</h5>
-        <input type="text" class="update-price" placeholder="new price">
-        <div class="btn-container">
+        <!-- side-modal update book -->
+        <div class="side-modal modal-update">
+            <h5 class="text-center" data-trans="update-header">Update Book</h5>
+            <input type="text" class="update-price" data-trans="new-price-placeholder" placeholder="new price">
+            <div class="btn-container">
+            </div>
         </div>
-    </div>
 
-    <!-- side-modal new book -->
-    <div class="side-modal modal-new">
-        <h5 class="text-center">Add New Book</h5>
-        <input type="text" class="new-name" placeholder="book name">
-        <input type="text" class="new-price" placeholder="book price">
-        <div class="btn-container">
+        <!-- side-modal new book -->
+        <div class="side-modal modal-new">
+            <h5 class="text-center" data-trans="add-header">Add New Book</h5>
+            <input type="text" class="new-name" data-trans="book-name-placeholder" placeholder="book name">
+            <input type="text" class="new-price" data-trans="book-price-placeholder" placeholder="book price $">
+            <div class="btn-container">
+            </div>
         </div>
-    </div>
 
-    <!-- modal-details -->
-    <div class="book-details">
-        <button onclick="onClose()" type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <h2></h2>
-        <p class="text-center"></p>
-        <div class="img-container mx-auto"></div>
-        <div class="row mx-auto d-flex justify-content-center">
+        <!-- modal-details -->
+        <div class="book-details">
+            <button onclick="onClose()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h2></h2>
+            <p class="text-center"></p>
+            <div class="img-container mx-auto"></div>
+            <div class="row mx-auto d-flex justify-content-center">
+            </div>
         </div>
-    </div>
 
 
 
 
-    <script src='js/util-service.js'></script>
-    <script src='js/books-service.js'></script>
-    <script src='js/main.js'></script>
-    <script src='lib/jquery-3.3.1.js'></script>
-    <script src='lib/bs4/js/bootstrap.js'></script>
+        <script src='js/util-service.js'></script>
+        <script src='js/books-service.js'></script>
+        <script src='js/i18n-service.js'></script>
+        <script src='js/main.js'></script>
+        <script src='lib/jquery-3.3.1.js'></script>
+        <script src='lib/bs4/js/bootstrap.js'></script>
 </body>
 
 </html>

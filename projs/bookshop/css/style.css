@@ -1,11 +1,23 @@
+body.rtl {
+    direction: rtl;
+}
+
+
+
 header {
-    position: fixed;
+    position: absolute;
     top: 0px;
     background-color: black;
     width: 100%;
     z-index: 1;
     padding-bottom: 5px; 
 }
+
+
+.action-buttons {
+    display: inline-block;
+}
+
 #books-table tr { 
     padding: 20px 0 20px 0
 }
@@ -27,7 +39,7 @@ td {
     padding: 20px;
     display: none;
     position: fixed;
-    top: 200px;
+    top: 100px;
     left: 10%;
     width: 80%;
     border: 2px solid black;
@@ -73,9 +85,6 @@ td {
     display: none;
 }
 
-.action-buttons {
-    display: inline-block;
-}
 
 
 
@@ -112,8 +121,15 @@ td {
         width: 60%;
     }
     #books-table tr { 
-        /* border-bottom: 4px solid black; */
         padding: 0ף
     }
     
+    header {
+        position: absolute;
+        top: 0px;
+        background-color: black;
+        width: 100%;
+        z-index: 1;
+        padding-bottom: 5px; 
+    }
 }

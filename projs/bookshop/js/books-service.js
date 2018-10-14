@@ -4,7 +4,7 @@ function createBooks() {
     var books = [
         createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
         createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
-        createBook('The Catcher In The Rye Long Title Edition Inc.', '4.99', 'img/catcher.jpg'),
+        createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
         createBook('12 Rules For Life', '14.99', 'img/12rules.jpg'),
         createBook('The Great Gatsby', '12.99', 'img/gatsby.jpg'),
         createBook('The Catcher In The Rye', '4.99', 'img/catcher.jpg'),
@@ -34,15 +34,14 @@ function createBook(name, price, imgUrl) {
 }
 // create and render table
 function renderBooks(books) {
-    var strHtml = `<div class="row"><table id="books-table" class="mx-auto table table-striped"><thead class="thead-dark"><th>id</th><th>book name</th>
-                    <th>price</th><th >actions</th></thead><tbody>`
+    var strHtml = ``
     var bookCount = 0
     books.forEach(function (book) {
         bookCount++
         strHtml += `<tr>    
                         <td>${book.id}</td>
                         <td>${book.name}</td>
-                        <td>$${book.price}</td>
+                        <td>${formatNum(book.price)}</td>
                         <td>
                         <div class="radio-container">
                             <input type="radio" id="radio${bookCount}" data-id="${book.id}" name="choose-book" />
@@ -50,16 +49,16 @@ function renderBooks(books) {
                         </div>
 
                         <div class="btn-container">
-                        <button class="btn btn-md btn-info" onclick="onRead('${book.id}')"><i class="fa fa-info-circle"></i> Read</button>
-                        <button class="btn btn-md btn-warning" onclick="onUpdate('${book.id}')"><i class="fas fa-edit"></i> Edit Price</button>
-                        <button class="btn btn-md btn-danger" onclick="onDelete('${book.id}')">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i> Del</button>
+                        <button class="btn btn-md btn-info" onclick="onRead('${book.id}')" data-trans="read-btn"><i class="fa fa-info-circle"></i> ${getTrans('Read')}</button>
+                        <button class="btn btn-md btn-warning" onclick="onUpdate('${book.id}')" data-trans="edit-btn"><i class="fas fa-edit"></i> ${getTrans('Edit Price')}</button>
+                        <button class="btn btn-md btn-danger" onclick="onDelete('${book.id}')" data-trans="delete-btn">&nbsp;&nbsp;&nbsp;<i class="fa fa-trash"></i> ${getTrans('Del')}</button>
                         </div>
                         </td>
                         </tr>`
     })
     strHtml += `</tbody></table></div>`
     
-    var $container = $('.table-col')
+    var $container = $('.table-col tbody')
     $container.html(strHtml)
 }
 
@@ -88,8 +87,11 @@ function readBook(bookId) {
     // open modal and create fresh image text & buttons
     $modal.fadeToggle(300)
     $modal.find('h2').html(`${book.name}`)
-    $modal.find('p').html(`$${book.price}`)
+   
+    $modal.find('p').html(`${formatNum(book.price)}`)
+   
     $modal.find('.img-container').html(`<img class="img-responsive img-thumbnail" src="${book.imgURL}">`)
+   
     $modal.find('.row').html(`<div class=" btn black-square col-xs-1" onclick="onMinus('${book.id}')">-</div>
     <div class="white-rect col-xs-2 rate">${book.rate}</div>
     <div class="btn black-square col-xs-1" onclick="onPlus('${book.id}')">+</div>`)
@@ -150,7 +152,10 @@ function closeModal() {
 
 function openSideModal(selector) {
     $(`${selector}`).slideToggle(300)
-    var btnHtml = `<button class="btn btn-sm btn-warning btn-update-book">Update!</button>`
+    var btnHtml = `
+    <button class="btn btn-sm btn-warning btn-update-book" data-trans="update-btn">
+        ${getTrans('update-btn')}
+    </button>`
     $(`${selector}`).find('.btn-container').html(btnHtml)
 }
 

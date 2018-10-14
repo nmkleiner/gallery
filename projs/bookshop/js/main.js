@@ -4,6 +4,7 @@ var gBooks
 
 function init() {
     gBooks = createBooks()
+    doTrans()
     renderBooks(gBooks)
 }
 
@@ -73,6 +74,9 @@ function onClose() {
     closeModal()
 }
 
-
+function onSetLang(lang) {
+    setLang(lang);
+    renderBooks(gBooks);
+}
 
 
