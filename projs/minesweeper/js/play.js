@@ -17,7 +17,6 @@ function clickHandler(ev, elCell) {
 }
 
 
-// rewrite a lot******************************************************
 function flagCell(elCell) {
     var cell = getCellLocation(elCell)
 
@@ -59,18 +58,20 @@ function isFlagCorrect(elCell) {
 }
 
 
-// rewrite alot ****************************
 function openCell(elCell) {
+    changeToAfraid()
+    
+    
     // get cell location to get his negs and call this func on them as well
     var cell = getCellLocation(elCell)
     console.log(cell)
-    
+
     // don't open flagged cells or open cells
     if (cell.open) return;
     if (cell.flag) {
-        
+
         $('.alert').html(`Don't click 🚩!`).slideToggle(300).delay(300).slideToggle(300)
-        
+
         return;
     }
     // start time count
@@ -79,7 +80,7 @@ function openCell(elCell) {
     // but it's good for starting the timer
     gOpenCellsCount++
     startTimer()
-    
+
     cell.open = true;
     // changing cell color 
     elCell.classList.remove('cell')
@@ -149,19 +150,19 @@ function isVictory() {
     }
 
     if (openCellsCount === gNoMinesCellsCount &&
-         gCorrectFlagsCount === 0 &&
-         gFlagCount === 0) {
+        gCorrectFlagsCount === 0 &&
+        gFlagCount === 0) {
         return true;
     }
     return false;
 }
 
 
-function restart(status) {
-    if (status === 'won') {
+function restart() {
+    if ($('.modal-won').css('display') !== 'none') {
         $('.modal-won').fadeOut(500)
     }
-    else {
+    if ($('.modal-lost').css('display') !== 'none') {
         $('.modal-lost').fadeOut(500)
     }
     setTimeout(init, 500);
@@ -169,6 +170,12 @@ function restart(status) {
 
 
 function gameWon() {
+    $emoj = $('.emoj')
+    setTimeout(function() {
+        $emoj.html(`${WINNER}`)
+    },301)
+
+
     gIsGameOn = false;
     clearInterval(gShowTime)
 
@@ -178,7 +185,7 @@ function gameWon() {
         if (elTds[i].innerText.includes('💣' && '🚩')) {
             elTds[i].innerText = '🚩'
         }
-        
+
     }
 
     // open all cells on board
@@ -197,6 +204,12 @@ function gameWon() {
 }
 
 function gameOver() {
+    $emoj = $('.emoj')
+    setTimeout(function() {
+        $emoj.html(`${DEAD}`)
+    },301)
+
+
     gIsGameOn = false;
     clearInterval(gShowTime);
     // find cells with mine & flag, make sure mine won't appear
@@ -205,7 +218,7 @@ function gameOver() {
         if (elTds[i].innerText.includes('💣' && '🚩')) {
             elTds[i].innerText = '🚩'
         }
-        
+
     }
 
     // reveal all hidden spans
@@ -213,7 +226,7 @@ function gameOver() {
     for (var i = 0; i < elHiddens.length; i++) {
         elHiddens[i].classList.remove('hidden')
     }
-    
+
     // open all cells on board
     var elCells = document.querySelectorAll('.cell')
     for (var i = 0; i < elCells.length; i++) {
@@ -222,4 +235,14 @@ function gameOver() {
 
     }
     $('.modal-lost').show()
+}
+
+
+
+function changeToAfraid() {
+    $emoj = $('.emoj')
+    $emoj.html(`${AFRAID}`)
+    setTimeout(function() {
+        $emoj.html(`${REGULAR}`)
+    },300)
 }

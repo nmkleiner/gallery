@@ -35,13 +35,15 @@ body {
     display: inline-block;
     background-color: orange;
     color: black;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     border: 3px solid black;
     height: 40px;
     width: 33%;
 }
-
+.emoj {
+    cursor: pointer;
+}
 
 table {
     position: relative;

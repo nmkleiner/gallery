@@ -39,9 +39,6 @@ function init() {
 }
 
 
-
-
-
 function createBoard() {
     for (var i = 0; i < 28; i++) {
         gBoard.push([])

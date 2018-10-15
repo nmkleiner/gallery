@@ -16,7 +16,6 @@ var gFlagCount
 var gOpenCellsCount
 var gNoMinesCellsCount
 var gCorrectFlagsCount
-
 var gShowTime
 
 
@@ -24,6 +23,12 @@ const MINE = '💣'
 const FLAG = '🚩'
 const EMPTY = ''
 const OPEN = ' '
+
+const WINNER = "😎"
+const DEAD = "😵"
+const AFRAID = "😮"
+const REGULAR = "🙂"
+
 
 
 function init() {
@@ -149,13 +154,11 @@ function calcDetectors(mat) {
 }
 
 
-// rewrite alot ****************************
-
 function renderBoard(mat, selector) {
     var elContainer = document.querySelector(selector);
     var strHTML = `<div class="table-header"> 
                     <div class="flag-count">0</div>
-                    <div class="emoj">:)</div>
+                    <div class="emoj" onclick="restart()">${REGULAR}</div>
                     <div class="timer">0</div>
                 </div>
                 <table border="0" class="board">
