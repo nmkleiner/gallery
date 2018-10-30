@@ -81,7 +81,6 @@ function createSoldier(color) {
 }
 
 function cleanBoard() {
-    console.log('clean')
     $('.soldier').remove()
 }
 
