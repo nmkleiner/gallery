@@ -34,3 +34,4 @@ function getCellLocation(elCell) {
     var cellJ = parseInt(splits[2])
     return gBoard[cellI][cellJ]
 }
+

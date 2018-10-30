@@ -83,6 +83,7 @@ function readBook(bookId) {
     // open modal and create fresh image text & buttons
     $modal.fadeToggle(300)
     $modal.find('h2').html(`${book.name}`)
+    $('.screen-overlay').css('visibility','visible')
 
     $modal.find('p').html(`${formatNum(book.price)}`)
 
@@ -145,6 +146,9 @@ function bookRate(bookId, num) {
 function closeModal() {
     var $modal = $('.book-details')
     $modal.fadeToggle(300)
+    $('.screen-overlay').css('visibility','hidden')
+
+
 }
 
 function openSideModal(selector) {

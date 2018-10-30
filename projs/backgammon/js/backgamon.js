@@ -375,7 +375,7 @@ function calcPossibleMoves() {
                 var move2 = triangle + mult * gNum2
             }
             // don't change zero conditions here
-            //  because (null <= 0 && null < 1) is true
+            //  because (null <= 0 && null < 1) is always true
             if (move1 > 24 || move1 < 0 || move1 === 0) {
                 move2 = move3 = null
             }
@@ -418,7 +418,7 @@ function calcPossibleMoves() {
         }
     }
 
-    // get locations of triangles that are oppdot1nt "houses", so they are illegal to drop on 
+    // get locations of triangles that are opponent "houses", so they are illegal to drop on 
     var oppdot1ntSoldiers = getOppdot1ntSoldiersLocations()
     //  remove from possiblemoves, all triangles that have oppdot1nt "house"
     //  and remove all moves that are outside of board when isExitAllowed() is false

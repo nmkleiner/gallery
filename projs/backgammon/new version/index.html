@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body>
+    <div class="board-container flex center">
+        <div class="outside flex flex-col">
+            <div class="cell-0" onclick="onCellClick(this, 0)">
+                <div class="outside-top black"></div>
+            </div>
+            <div class="cell-25" onclick="onCellClick(this, 25)">
+                <div class="outside-bot white"></div>
+            </div>
+        </div>
+        <div class="board flex flex-col">
+            <div class="row row-top flex">
+                <div class="triangle flex flex-col cell-1" onclick="onCellClick(this, 1)">
+                    <div class="triangle-down triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-2" onclick="onCellClick(this, 2)">
+                    <div class="triangle-down triangle-red"></div>
+                </div>
+                <div class="triangle flex flex-col cell-3" onclick="onCellClick(this, 3)">
+                    <div class="triangle-down triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-4" onclick="onCellClick(this, 4)">
+                    <div class="triangle-down triangle-red"></div>
+                </div>
+                <div class="triangle flex flex-col cell-5" onclick="onCellClick(this, 5)">
+                    <div class="triangle-down triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-6" onclick="onCellClick(this, 6)">
+                    <div class="triangle-down triangle-red"></div>
+                </div>
+                <div class="middle-row"></div>
+                <div class="triangle flex flex-col cell-7" onclick="onCellClick(this, 7)">
+                    <div class="triangle-down triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-8" onclick="onCellClick(this, 8)">
+                    <div class="triangle-down triangle-red"></div>
+                </div>
+                <div class="triangle flex flex-col cell-9" onclick="onCellClick(this, 9)">
+                    <div class="triangle-down triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-10" onclick="onCellClick(this, 10)">
+                    <div class="triangle-down triangle-red"></div>
+                </div>
+                <div class="triangle flex flex-col cell-11" onclick="onCellClick(this, 11)">
+                    <div class="triangle-down triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-12" onclick="onCellClick(this, 12)">
+                    <div class="triangle-down triangle-red"></div>
+                </div>
+            </div>
+            <div class="row row-bot flex">
+                <div class="triangle flex flex-col cell-13" onclick="onCellClick(this, 13)">
+                    <div class="triangle-up triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-14" onclick="onCellClick(this, 14)">
+                    <div class="triangle-up triangle-red"></div>
+                </div>
+                <div class="triangle flex flex-col cell-15" onclick="onCellClick(this, 15)">
+                    <div class="triangle-up triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-16" onclick="onCellClick(this, 16)">
+                    <div class="triangle-up triangle-red"></div>
+                </div>
+                <div class="triangle flex flex-col cell-17" onclick="onCellClick(this, 17)">
+                    <div class="triangle-up triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-18" onclick="onCellClick(this, 18)">
+                    <div class="triangle-up triangle-red"></div>
+                </div>
+                <div class="middle-row"></div>
+                <div class="triangle flex flex-col cell-19" onclick="onCellClick(this, 19)">
+                    <div class="triangle-up triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-20" onclick="onCellClick(this, 20)">
+                    <div class="triangle-up triangle-red"></div>
+                </div>
+                <div class="triangle flex flex-col cell-21" onclick="onCellClick(this, 21)">
+                    <div class="triangle-up triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-22" onclick="onCellClick(this, 22)">
+                    <div class="triangle-up triangle-red"></div>
+                </div>
+                <div class="triangle flex flex-col cell-23" onclick="onCellClick(this, 23)">
+                    <div class="triangle-up triangle-black"></div>
+                </div>
+                <div class="triangle flex flex-col cell-24" onclick="onCellClick(this, 24)">
+                    <div class="triangle-up triangle-red"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cube-section flex flex-col">
+            <button class="throw-dice" onclick="onThrowDice(this)">Throw dices</button>
+            <div class="cube-container flex flex-col">
+                <div class="cube cube1">
+                    <div class="dot dot1"></div>
+                    <div class="dot dot2"></div>
+                    <div class="dot dot3"></div>
+                    <div class="dot dot4"></div>
+                    <div class="dot dot5"></div>
+                    <div class="dot dot6"></div>
+                    <div class="dot dot7"></div>
+                </div>
+                <div class="cube cube2">
+                    <div class="dot dot1"></div>
+                    <div class="dot dot2"></div>
+                    <div class="dot dot3"></div>
+                    <div class="dot dot4"></div>
+                    <div class="dot dot5"></div>
+                    <div class="dot dot6"></div>
+                    <div class="dot dot7"></div>
+                </div>
+
+            </div>
+            <div class="cube-text">1+1=6</div>
+        </div>
+    </div>
+
+
+
+    <script src='js/jquery-3.3.1.js'></script>
+    <script src='js/utils-service.js'></script>
+    <script src='js/game-service.js'></script>
+    <script src='js/dices-service.js'></script>
+    <script src='js/main.js'></script>
+</body>
+
+</html>
